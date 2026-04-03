@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisata Kota Mataram</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Navbar -->
+<nav class="bg-white shadow p-4 flex justify-between sticky top-0 z-50">
+  <h1 class="text-xl font-bold">Explore Mataram</h1>
+  <div class="space-x-4">
+    <a href="#home" class="hover:text-blue-500">Home</a>
+    <a href="#destinasi" class="hover:text-blue-500">Destinasi</a>
+    <a href="#aktivitas" class="hover:text-blue-500">Aktivitas</a>
+    <a href="#kuliner" class="hover:text-blue-500">Kuliner</a>
+  </div>
+</nav>
+
+<!-- 1. Homepage -->
+<section id="home" class="h-screen bg-cover bg-center flex items-center justify-center text-white"
+style="background-image: url('home.jpg');">
+
+  <div class="bg-black/50 p-6 rounded-xl text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Selamat Datang di Wisata Kota Mataram</h2>
+    
+    <!-- Search -->
+    <input type="text" placeholder="Cari: Pantai, Kuliner, Budaya..." 
+    class="p-2 w-full text-black rounded mb-4">
+
+    <!-- Button -->
+    <button class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 transition">
+      Jelajahi Sekarang
+    </button>
+  </div>
+
+</section>
+
+  <!-- Hero Video -->
+  <video autoplay muted loop class="w-full rounded-xl mb-4" data-aos="zoom-in">
+    <source src="mpm" type="video/mp4">
+  </video>
+
+  <!-- Search -->
+  <input type="text" placeholder="Cari: Pantai, Kuliner, Budaya..." class="p-2 w-full border rounded" data-aos="fade-up">
+
+  <!-- Highlight Destinasi -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+    <div class="bg-white p-4 rounded shadow hover:scale-105 transition" data-aos="fade-right">Pantai Senggigi</div>
+    <div class="bg-white p-4 rounded shadow hover:scale-105 transition" data-aos="fade-up">Museum NTB</div>
+    <div class="bg-white p-4 rounded shadow hover:scale-105 transition" data-aos="fade-left">Pura Meru</div>
+  </div>
+</section>
+
+<!-- 2. Destinasi -->
+<section id="destinasi" class="p-10 bg-cover bg-center text-white relative"
+style="background-image: url('destinasi.jpg');">
+
+  <!-- Overlay biar teks kebaca -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative z-10">
+    <h2 class="text-3xl font-bold mb-6 text-center" data-aos="fade-up">Destinasi</h2>
+
+    <p class="text-center mb-6" data-aos="fade-up">
+      Jelajahi berbagai wilayah menarik di Kota Mataram
+    </p>
+
+    <!-- Kategori -->
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <div onclick="openModal()" 
+class="bg-white/20 backdrop-blur p-6 rounded-xl hover:scale-105 transition cursor-pointer"
+data-aos="fade-right">
+  <h3 class="text-xl font-bold">🌴 The Tropical North</h3>
+  <p>Pantai, laut, dan wisata alam tropis</p>
+</div>
+
+      <div onclick="openModalHistory()" 
+class="bg-white/20 backdrop-blur p-6 rounded-xl hover:scale-105 transition cursor-pointer"
+data-aos="fade-up">
+  <h3 class="text-xl font-bold">🏛️ The Historical Heartland</h3>
+  <p>Budaya, sejarah, dan warisan lokal</p>
+</div>
+
+      <div onclick="openModalModern()" 
+class="bg-white/20 backdrop-blur p-6 rounded-xl hover:scale-105 transition cursor-pointer"
+data-aos="fade-left">
+  <h3 class="text-xl font-bold">🏙️ The Modern Metro</h3>
+  <p>Kota modern dengan hiburan lengkap</p>
+</div> 
+
+    </div>
+  </div>
+
+</section>
+
+<!-- 3. Aktivitas -->
+<section id="aktivitas" class="p-10 bg-cover bg-center text-white relative"
+style="background-image: url('aktivitas.jpg');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative z-10">
+    <h2 class="text-3xl font-bold mb-6 text-center" data-aos="fade-up">
+      Aktivitas & Pengalaman
+    </h2>
+
+    <p class="text-center mb-8" data-aos="fade-up">
+      Temukan pengalaman seru sesuai minatmu
+    </p>
+
+    <!-- Card Aktivitas -->
+    <div class="grid md:grid-cols-4 gap-6">
+
+      <div onclick="openModalPetualangan()" 
+class="bg-white/20 backdrop-blur p-6 rounded-xl text-center 
+hover:scale-110 hover:bg-white/30 transition cursor-pointer"
+data-aos="zoom-in">
+  <h3 class="text-xl font-bold mb-2">🏕️ Petualangan</h3>
+  <p>Hiking, camping, dan eksplor alam</p>
+</div>
+      <div onclick="openModalKeluarga()" 
+class="bg-white/20 backdrop-blur p-6 rounded-xl text-center 
+hover:scale-110 hover:bg-white/30 transition cursor-pointer"
+data-aos="zoom-in">
+  <h3 class="text-xl font-bold mb-2">👨‍👩‍👧 Keluarga</h3>
+  <p>Wisata santai dan ramah anak</p>
+</div>
+      <div onclick="openModalRomantis()" 
+class="bg-white/20 backdrop-blur p-6 rounded-xl text-center 
+hover:scale-110 hover:bg-white/30 transition cursor-pointer"
+data-aos="zoom-in">
+  <h3 class="text-xl font-bold mb-2">💑 Romantis</h3>
+  <p>Sunset view</p>
+</div>
+
+      <div onclick="openModalNomad()" 
+class="bg-white/20 backdrop-blur p-6 rounded-xl text-center 
+hover:scale-110 hover:bg-white/30 transition cursor-pointer"
+data-aos="zoom-in">
+  <h3 class="text-xl font-bold mb-2">💻 Digital Nomad</h3>
+  <p>Tempat kerja + healing vibes</p>
+</div>
+
+    </div>
+
+    <!-- Top Experience -->
+    <div class="mt-10">
+      <h3 class="text-2xl font-bold mb-4 text-center" data-aos="fade-up">
+        Top Experiences
+      </h3>
+
+      <ul class="space-y-2 text-center">
+        <li data-aos="fade-up">🌄 Melihat sunset di Pantai Senggigi</li>
+        <li data-aos="fade-up">🍜 Mencoba kuliner khas daerah Resto setempat</li>
+        <li data-aos="fade-up">🎭 Melihat monumen sejarah budaya Kota</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- 5. Kuliner -->
+<section id="kuliner" class="p-10 bg-cover bg-center text-white relative"
+style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');">
+
+  <!-- Overlay -->
+  <div class="grid md:grid-cols-3 gap-6">
+
+  <div onclick="openModalKuliner('ayam taliwang')" 
+  class="bg-white/20 backdrop-blur rounded-xl overflow-hidden 
+  hover:scale-105 transition cursor-pointer">
+    <img src="taliwang.jpg" class="w-full h-40 object-cover">
+    <div class="p-4">
+      <h3 class="text-xl font-bold">Ayam Taliwang</h3>
+    </div>
+  </div>
+
+  <div onclick="openModalKuliner('bebalung')" 
+  class="bg-white/20 backdrop-blur rounded-xl overflow-hidden 
+  hover:scale-105 transition cursor-pointer">
+    <img src="balung.jpg" class="w-full h-40 object-cover">
+    <div class="p-4">
+      <h3 class="text-xl font-bold">Bebalung</h3>
+    </div>
+  </div>
+
+  <div onclick="openModalKuliner('nasi balap puluy')" 
+  class="bg-white/20 backdrop-blur rounded-xl overflow-hidden 
+  hover:scale-105 transition cursor-pointer">
+    <img src="nasi balap.jpg" class="w-full h-40 object-cover">
+    <div class="p-4">
+      <h3 class="text-xl font-bold">Nasi Balap Puluy</h3>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+    <!-- Extra -->
+    <div class=\"mt-10 text-center\">
+      <h3 class=\"text-2xl font-bold mb-4\" data-aos=\"fade-up\">
+        Must Try!
+      </h3>
+      <p data-aos=\"fade-up\">
+        Jangan lewatkan pengalaman kuliner khas Mataram saat berkunjung!
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Form -->
+<section class="p-10 bg-cover bg-center text-white relative"
+style="background-image: url('booking.jpg');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative z-10 max-w-xl mx-auto">
+
+    <h2 class="text-3xl font-bold mb-6 text-center" data-aos="fade-up">
+      Booking Wisata
+    </h2>
+
+    <p class="text-center mb-6" data-aos="fade-up">
+      Rencanakan perjalananmu sekarang!
+    </p>
+
+    <form class="space-y-4 bg-white/20 backdrop-blur p-6 rounded-xl"
+    data-aos="zoom-in">
+
+      <input type="text" placeholder="Nama Lengkap"
+      class="w-full p-2 rounded text-black" required>
+
+      <input type="email" placeholder="Email"
+      class="w-full p-2 rounded text-black" required>
+
+      <!-- Pilih Tanggal -->
+      <label class="block">Tanggal Kunjungan:</label>
+      <input type="date"
+      class="w-full p-2 rounded text-black" required>
+
+      <!-- Pilih Jumlah Orang -->
+      <label class="block">Jumlah Orang:</label>
+      <select class="w-full p-2 rounded text-black">
+        <option>1 Orang</option>
+        <option>2 Orang</option>
+        <option>3-5 Orang</option>
+        <option>Lebih dari 5</option>
+      </select>
+
+      <!-- Pilih Destinasi -->
+      <label class="block">Pilih Destinasi:</label>
+      <select class="w-full p-2 rounded text-black">
+        <option>Pantai</option>
+        <option>Kuliner</option>
+        <option>Budaya</option>
+      </select>
+
+      <button type="button" onclick="openSuccess()" 
+class="bg-blue-500 w-full py-2 rounded hover:bg-blue-700 transition">
+  Pesan Sekarang
+</button>
+
+    </form>
+
+  </div>
+
+</section>
+<!-- Modal -->
+<div id="modalTropis" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <!-- Tombol Close -->
+    <button onclick="closeModal()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 class="text-2xl font-bold mb-4">The Tropical North</h2>
+
+    <!-- Foto -->
+    <img src="senggigi.jpg" 
+    class="w-full h-48 object-cover rounded mb-4">
+
+    <p>
+      Wilayah tropis dengan pantai indah, laut biru, dan aktivitas seperti snorkeling, diving, dan sunset view.
+    </p>
+
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('modalTropis').classList.remove('hidden');
+  document.getElementById('modalTropis').classList.add('flex');
+}
+
+function closeModal() {
+  document.getElementById('modalTropis').classList.add('hidden');
+}
+</script>
+<!-- Modal Historical -->
+<div id="modalHistory" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <!-- Tombol Close -->
+    <button onclick="closeModalHistory()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 class="text-2xl font-bold mb-4">The Historical Heartland</h2>
+
+    <!-- Foto -->
+    <img src="budaya.jpg" 
+    class="w-full h-48 object-cover rounded mb-4">
+
+    <p>
+      Wilayah dengan kekayaan sejarah dan budaya, seperti keraton, candi, dan tradisi lokal yang masih dijaga hingga sekarang oleh masyarakat setempat Kota Mataram
+    </p>
+
+  </div>
+</div>
+
+<script>
+function openModalHistory() {
+  document.getElementById('modalHistory').classList.remove('hidden');
+  document.getElementById('modalHistory').classList.add('flex');
+}
+
+function closeModalHistory() {
+  document.getElementById('modalHistory').classList.add('hidden');
+}
+</script>
+<!-- Modal Modern -->
+<div id="modalModern" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <button onclick="closeModalModern()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 class="text-2xl font-bold mb-4">The Modern Metro</h2>
+
+    <img src="WhatsApp Image 2026-04-03 at 14.25.15.jpeg" 
+    class="w-full h-48 object-cover rounded mb-4">
+
+    <p>
+      Kota modern dengan gedung tinggi, pusat perbelanjaan, cafe hits, dan hiburan malam yang menarik yang bisa dikunjungi oleh keluarga, pasangan dan teman.
+    </p>
+
+  </div>
+</div>
+<!-- Modal Petualangan -->
+<div id="modalPetualangan" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <!-- Close -->
+    <button onclick="closeModalPetualangan()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Petualangan</h2>
+
+    <!-- Slider -->
+    <div class="relative">
+      <img id="sliderImage" 
+      src="rinjani.jpg"
+      class="w-full h-48 object-cover rounded mb-4">
+
+      <!-- Button -->
+      <button onclick="prevSlide()" class="absolute left-2 top-1/2 bg-black/50 text-white px-2">‹</button>
+      <button onclick="nextSlide()" class="absolute right-2 top-1/2 bg-black/50 text-white px-2">›</button>
+    </div>
+
+    <p class="text-center">
+      Nikmati petualangan seru seperti hiking, camping, di bukit Rinjani serta menikamati sunsrise di basecamp rinjani
+    </p>
+
+  </div>
+</div>
+<!-- Modal Keluarga -->
+<div id="modalKeluarga" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <!-- Close -->
+    <button onclick="closeModalKeluarga()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Wisata Keluarga</h2>
+
+    <!-- Slider -->
+    <div class="relative">
+      <img id="sliderKeluarga" 
+      src="tamannn.jpg"
+      class="w-full h-48 object-cover rounded mb-4">
+
+      <button onclick="prevSlideKeluarga()" class="absolute left-2 top-1/2 bg-black/50 text-white px-2">‹</button>
+      <button onclick="nextSlideKeluarga()" class="absolute right-2 top-1/2 bg-black/50 text-white px-2">›</button>
+    </div>
+
+    <p class="text-center">
+      Nikmati liburan bersama keluarga dengan suasana nyaman dan menyenangkan di taman udayana, dengan menikmati pemandangan yang memanjakan mata bersama keluarga tersayang.
+    </p>
+
+  </div>
+</div>
+<!-- Modal Romantis -->
+<div id="modalRomantis" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <!-- Close -->
+    <button onclick="closeModalRomantis()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Wisata Romantis</h2>
+
+    <!-- Slider -->
+    <div class="relative">
+      <img id="sliderRomantis" 
+      src="bukit1.jpg"
+      class="w-full h-48 object-cover rounded mb-4">
+
+      <button onclick="prevSlideRomantis()" class="absolute left-2 top-1/2 bg-black/50 text-white px-2">‹</button>
+      <button onclick="nextSlideRomantis()" class="absolute right-2 top-1/2 bg-black/50 text-white px-2">›</button>
+    </div>
+
+    <p class="text-center">
+      Nikmati suasana romantis dengan pasangan, sunset indah, dan tempat yang tenang di bukit merese dan malimbu dengan jalanan yang indah, membuat suasana semakin romantis
+    </p>
+
+  </div>
+</div>
+<!-- Modal Digital Nomad -->
+<div id="modalNomad" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <!-- Close -->
+    <button onclick="closeModalNomad()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Digital Nomad</h2>
+
+    <!-- Slider -->
+    <div class="relative">
+      <img id="sliderNomad" 
+      src="caffe kuta.jpg"
+      class="w-full h-48 object-cover rounded mb-4">
+      
+
+      <button onclick="prevSlideNomad()" class="absolute left-2 top-1/2 bg-black/50 text-white px-2">‹</button>
+      <button onclick="nextSlideNomad()" class="absolute right-2 top-1/2 bg-black/50 text-white px-2">›</button>
+    </div>
+
+    <p class="text-center">
+      Nikmati bekerja dari mana saja dengan suasana nyaman, cafe estetik, dan koneksi internet yang baik di Caffe terbaik di lombok mataram, Kuta Caffe dengan fasilitas nyaman cocok untuk meeting maupun WFC (Work From Caffe)
+    </p>
+
+  </div>
+</div>
+<!-- Modal Kuliner -->
+<div id="modalKuliner" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl max-w-lg w-full relative">
+
+    <button onclick="closeModalKuliner()" class="absolute top-2 right-2 text-xl">✖</button>
+
+    <h2 id="judulKuliner" class="text-2xl font-bold mb-4 text-center"></h2>
+
+    <img id="gambarKuliner" class="w-full h-48 object-cover rounded mb-4">
+
+    <p id="deskripsiKuliner" class="text-center"></p>
+
+  </div>
+</div>
+<!-- Modal Success -->
+<div id="modalSuccess" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-xl text-center">
+
+    <h2 class="text-2xl font-bold mb-4">✅ Pemesanan Berhasil!</h2>
+
+    <p class="mb-4">Terima kasih, data kamu sudah kami terima.</p>
+
+    <button onclick="closeSuccess()" 
+    class="bg-blue-500 text-white px-4 py-2 rounded">
+      OK
+    </button>
+
+  </div>
+</div>
+<script>function openModalModern() {
+  document.getElementById('modalModern').classList.remove('hidden');
+  document.getElementById('modalModern').classList.add('flex');
+}
+
+function closeModalModern() {
+  document.getElementById('modalModern').classList.add('hidden');
+}
+let images = [
+  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+  "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+];
+
+let index = 0;
+
+function openModalPetualangan() {
+  document.getElementById('modalPetualangan').classList.remove('hidden');
+  document.getElementById('modalPetualangan').classList.add('flex');
+}
+
+function closeModalPetualangan() {
+  document.getElementById('modalPetualangan').classList.add('hidden');
+}
+
+function nextSlide() {
+  index = (index + 1) % images.length;
+  document.getElementById('sliderImage').src = images[index];
+}
+
+function prevSlide() {
+  index = (index - 1 + images.length) % images.length;
+  document.getElementById('sliderImage').src = images[index];
+}
+let imagesKeluarga = [
+  "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb",
+  "https://images.unsplash.com/photo-1511895426328-dc8714191300"
+];
+
+let indexKeluarga = 0;
+
+function openModalKeluarga() {
+  document.getElementById('modalKeluarga').classList.remove('hidden');
+  document.getElementById('modalKeluarga').classList.add('flex');
+}
+
+function closeModalKeluarga() {
+  document.getElementById('modalKeluarga').classList.add('hidden');
+}
+
+function nextSlideKeluarga() {
+  indexKeluarga = (indexKeluarga + 1) % imagesKeluarga.length;
+  document.getElementById('sliderKeluarga').src = imagesKeluarga[indexKeluarga];
+}
+
+function prevSlideKeluarga() {
+  indexKeluarga = (indexKeluarga - 1 + imagesKeluarga.length) % imagesKeluarga.length;
+  document.getElementById('sliderKeluarga').src = imagesKeluarga[indexKeluarga];
+}
+let imagesRomantis = [
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+  "https://images.unsplash.com/photo-1493558103817-58b2924bce98"
+];
+
+let indexRomantis = 0;
+
+function openModalRomantis() {
+  document.getElementById('modalRomantis').classList.remove('hidden');
+  document.getElementById('modalRomantis').classList.add('flex');
+}
+
+function closeModalRomantis() {
+  document.getElementById('modalRomantis').classList.add('hidden');
+}
+
+function nextSlideRomantis() {
+  indexRomantis = (indexRomantis + 1) % imagesRomantis.length;
+  document.getElementById('sliderRomantis').src = imagesRomantis[indexRomantis];
+}
+
+function prevSlideRomantis() {
+  indexRomantis = (indexRomantis - 1 + imagesRomantis.length) % imagesRomantis.length;
+  document.getElementById('sliderRomantis').src = imagesRomantis[indexRomantis];
+}
+let imagesNomad = [
+  "https://images.unsplash.com/photo-1492724441997-5dc865305da7 ",
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+];
+
+let indexNomad = 0;
+
+function openModalNomad() {
+  document.getElementById('modalNomad').classList.remove('hidden');
+  document.getElementById('modalNomad').classList.add('flex');
+}
+
+function closeModalNomad() {
+  document.getElementById('modalNomad').classList.add('hidden');
+}
+
+function nextSlideNomad() {
+  indexNomad = (indexNomad + 1) % imagesNomad.length;
+  document.getElementById('sliderNomad').src = imagesNomad[indexNomad];
+}
+
+function prevSlideNomad() {
+  indexNomad = (indexNomad - 1 + imagesNomad.length) % imagesNomad.length;
+  document.getElementById('sliderNomad').src = imagesNomad[indexNomad];
+}
+function openModalKuliner(menu) {
+  let judul = document.getElementById("judulKuliner");
+  let gambar = document.getElementById("gambarKuliner");
+  let deskripsi = document.getElementById("deskripsiKuliner");
+
+  if(menu === "rendang") {
+    judul.innerText = "Rendang";
+    gambar.src = "https://images.unsplash.com/photo-1604908176997-431c9b5d6a36";
+    deskripsi.innerText = "Rendang adalah makanan khas Minangkabau dengan bumbu rempah yang kaya.";
+  }
+
+  if(menu === "sate") {
+    judul.innerText = "Sate";
+    gambar.src = "https://images.unsplash.com/photo-1555992336-03a23c5c8d1c";
+    deskripsi.innerText = "Sate adalah daging yang dibakar dan disajikan dengan saus kacang.";
+  }
+
+  if(menu === "gudeg") {
+    judul.innerText = "Gudeg";
+    gambar.src = "https://images.unsplash.com/photo-1589308078059-be1415eab4c3";
+    deskripsi.innerText = "Gudeg adalah makanan khas Yogyakarta berbahan nangka muda.";
+  }
+
+  document.getElementById('modalKuliner').classList.remove('hidden');
+  document.getElementById('modalKuliner').classList.add('flex');
+}
+
+function closeModalKuliner() {
+  document.getElementById('modalKuliner').classList.add('hidden');
+}
+function openSuccess() {
+  document.getElementById('modalSuccess').classList.remove('hidden');
+  document.getElementById('modalSuccess').classList.add('flex');
+}
+
+function closeSuccess() {
+  document.getElementById('modalSuccess').classList.add('hidden');
+}
+  AOS.init({ duration: 1000 });
+</script>
+
+</body>
+</html>
